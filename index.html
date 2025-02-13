@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Program</title>
+    <style>
+        .container {
+    text-align: center;
+    background-color: aquamarine;
+    border: solid 2px black;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    font-family: helvetica;
+}
+h1 {
+    color: darkblue;
+    font-size: 2em;
+    margin-bottom: 10px;
+    border: solid 1.5px black;
+    padding: 5px;
+    text-align: center;
+    background-color: aquamarine;
+    border-radius: 10px;
+}
+#counter {
+    font-size: 5em;
+    margin-bottom: 20px;
+    border: solid 2px black;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    padding-left: 10px;
+    text-align: center;
+    padding-right: 10px;
+}
+
+#incrementBtn {
+    font-size: 1em;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: green;
+    color: white;
+    border: black solid 2px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#decrementBtn {
+    font-size: 1em;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: red;
+    color: white;
+    border: black solid 2px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#resetBtn {
+    font-size: 1em;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: yellow;
+    color: black;
+    border: black solid 2px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#incrementBtn:hover {
+    background-color: darkgreen;
+}
+#decrementBtn:hover {
+    background-color: darkred;
+}
+
+#resetBtn:hover {
+    background-color: darkorange;
+}
+#incrementBtn:active {
+    background-color: darkgreen;
+    transform: translateY(5px);
+}
+
+#decrementBtn:active {
+    background-color: darkred;
+    transform: translateY(5px);
+}
+
+#resetBtn:active {
+    background-color: darkorange;
+    transform: translateY(5px);
+}
+    </style>
+</head>
+<body>
+    <h1>Counter Program</h1>
+    <div class="container">
+        <p><span id="counter">0</span></p>
+        <button onclick="increment()" id="incrementBtn">Increment</button>
+        <button onclick="decrement()"id="decrementBtn">Decrement</button>
+        <button onclick="reset()"id="resetBtn">Reset</button>
+        <script>
+            function increment() {
+                    let count = document.getElementById('counter').innerText;
+                    count = parseInt(count) || 0;
+                    count++;
+                    document.getElementById('counter').innerText = count;
+                }
+                function decrement() {
+                    let count = document.getElementById('counter').innerText;
+                    count = parseInt(count) || 0;
+                    count--;
+                    document.getElementById('counter').innerText = count;
+                }
+
+                function reset() {
+                    document.getElementById('counter').innerText = 0;
+                }
+        </script>
+    </div>
+</body>
+</html>
