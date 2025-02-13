@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Password Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 100px;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 300px;
+            margin: auto;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px;
+            margin: 5px;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Password Generator</h2>
+        <input type="text" id="password" readonly>
+        <button onclick="generatePassword()">Generate Password</button>
+        <button onclick="copyPassword()">Copy</button>
+    </div>
+
+    <script>
+        function generatePassword() {
+            let chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            let password = "";
+
+            for (let i = 0; i < 8; i++) { // Generates an 8-character password
+                let randomIndex = Math.floor(Math.random() * chars.length);
+                password += chars[randomIndex];
+            }
+
+            document.getElementById("password").value = password;
+        }
+
+        function copyPassword() {
+            let passwordField = document.getElementById("password");
+            passwordField.select();
+            document.execCommand("copy");
+            alert("Password copied!");
+        }
+    </script>
+</body>
+
+</html>
